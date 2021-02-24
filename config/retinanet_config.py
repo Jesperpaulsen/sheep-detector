@@ -10,6 +10,9 @@ BASE_PATH = "dataset"
 ANNOT_PATH = os.path.sep.join([BASE_PATH, 'annotations'])
 IMAGES_PATH = os.path.sep.join([BASE_PATH, 'images'])
 
+JSON_PATH = os.path.sep.join([ANNOT_PATH, 'json'])
+CSV_PATH = os.path.sep.join([ANNOT_PATH, 'csv'])
+
 # degine the training/testing split
 TRAIN_TEST_SPLIT = 0.75
 
