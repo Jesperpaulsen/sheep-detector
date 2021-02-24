@@ -14,10 +14,10 @@ def convert_json_to_list():
             image = images[key]
             image_path = os.path.join(config.IMAGES_PATH, key)
             labels = get_image_labels(image)
-            if not check_if_image_has_labels(labels):
-                add_annotation_without_label(image_path)
-            else:
+            if check_if_image_has_labels(labels):
                 add_annotation(image_path, labels)
+            else:
+                add_annotation_without_label(image_path)
 
 
 def get_image_labels(image):
