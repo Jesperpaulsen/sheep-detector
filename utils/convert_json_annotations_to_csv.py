@@ -45,7 +45,7 @@ def add_annotation(image_path, labels):
         y1 = min_cords[1]
         x2 = max_cors[0]
         y2 = max_cors[1]
-        csv_annotations.append(separator.join([image_path, str(x1), str(y1), str(x2), str(y2), 'sheep\n']))
+        csv_annotations.append(separator.join([image_path, str(x1), str(y1), str(x2), str(y2), str(1) + '\n']))
 
 
 def convert_list_to_csv():

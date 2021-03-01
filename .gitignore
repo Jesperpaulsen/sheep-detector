@@ -130,3 +130,6 @@ dmypy.json
 
 dataset/annotations
 .idea
+dataset/images/
+
+.vscode/
