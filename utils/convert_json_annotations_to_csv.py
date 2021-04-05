@@ -1,4 +1,4 @@
-from config import retinanet_config as config
+from config import config as config
 import json
 import os
 
