@@ -15,9 +15,9 @@ def convert_json_to_list():
             image_path = os.path.join(config.IMAGES_PATH, key)
             labels = get_image_labels(image)
             if check_if_image_has_labels(labels):
-                add_annotation(image_path, labels)
+                add_annotation(key, labels)
             else:
-                add_annotation_without_label(image_path)
+                add_annotation_without_label(key)
 
 
 def get_image_labels(image):
@@ -45,7 +45,7 @@ def add_annotation(image_path, labels):
         y1 = min_cords[1]
         x2 = max_cors[0]
         y2 = max_cors[1]
-        csv_annotations.append(separator.join([image_path, str(x1), str(y1), str(x2), str(y2), str(1) + '\n']))
+        csv_annotations.append(separator.join([image_path, str(x1), str(y1), str(x2), str(y2), 'sheep' + '\n']))
 
 
 def convert_list_to_csv():
