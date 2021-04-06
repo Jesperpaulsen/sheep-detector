@@ -3,9 +3,10 @@
 #SBATCH --account=ie-idi
 #SBATCH --time=00:15:00
 #SBATCH --nodes=1
+#SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=50000
-#SBATCH --job-name="summarization_pipeline_pegasus"
+#SBATCH --job-name="testing"
 #SBATCH --output=output_summarization.out
 #SBATCH --mail-user=jespergp@stud.ntnu.no
 #SBATCH --mail-type=ALL
@@ -26,33 +27,20 @@ module load Python/3.8.6-GCCcore-10.2.0
 
 # Use if env not exist
 #python -m venv env
-source env/bin/activate
 
 # Use if complains about pip version
 # python -m pip install --upgrade pip
-export PYTHONPATH="$HOME/master-thesis/env/bin"
+export PYTHONPATH="$HOME/sheep-detector/env/bin"
+eval "$(/cluster/home/jespergp/miniconda/bin/conda shell.bash hook)"
+conda activate "sheep"
 python -V
 pip -V
-which python
-which pip
 
-#pip install --upgrade pip
-#pip install numpy
-#pip install matplotlib
-#pip install python-dotenv
-#python -m pip install -r requirements.txt
-#cd models/sentence-embeddings/sent2vec 
-#pip install .
-#pip uninstall sent2vec -y
-pip list
-
-#python bio-multi-sum/main.py --embedding=sentence_bert --total_documents=5
 (
-cd activation_functions/mish-cuda || exit
-python setup.py build install
+  cd activation_functions/mish-cuda || exit
+  python collect_env.py
+  python setup.py build install
 )
-
-pip install -U PyYAML
 
 # python bio-multi-sum/main.py --embedding=biosentvec --total_documents=6 --docs_in_document_cluster=2 --pre_trained_model=pegasus
 #python bio-multi-sum/main.py --embedding=sent2vec
