@@ -47,11 +47,14 @@ which pip
 pip list
 
 #python bio-multi-sum/main.py --embedding=sentence_bert --total_documents=5
+(
 cd activation_functions/mish-cuda || exit
 python setup.py build install
+)
+
 pip install -U PyYAML
 
-python bio-multi-sum/main.py --embedding=biosentvec --total_documents=6 --docs_in_document_cluster=2 --pre_trained_model=pegasus
+# python bio-multi-sum/main.py --embedding=biosentvec --total_documents=6 --docs_in_document_cluster=2 --pre_trained_model=pegasus
 #python bio-multi-sum/main.py --embedding=sent2vec
 
 echo "Script completed"
