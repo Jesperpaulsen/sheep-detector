@@ -3,7 +3,7 @@
 #SBATCH --account=ie-idi
 #SBATCH --time=01:00:00
 #SBATCH --nodes=1
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:3
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=50000
 #SBATCH --job-name="testing"
@@ -45,7 +45,7 @@ python setup.py build install)
 
 
 (cd models/scaled_yolo_v4 || exit
-python train.py --img 2048 1536  --batch 64 --epochs 500 --data './data/data.yaml' --cfg ./models/yolov4-csp.yaml --weights '' --name yolov4-csp-results  --notest)
+python train.py --img 2048 1536  --batch 32 --epochs 500 --data './data/data.yaml' --cfg ./models/yolov4-csp.yaml --weights '' --device 0,1,2 --name yolov4-csp-results  --notest)
 
 
 # python bio-multi-sum/main.py --embedding=biosentvec --total_documents=6 --docs_in_document_cluster=2 --pre_trained_model=pegasus
