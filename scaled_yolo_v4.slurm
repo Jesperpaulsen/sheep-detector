@@ -37,14 +37,15 @@ python -V
 pip -V
 
 
-cd activation_functions/mish-cuda || exit
+
+
+(cd activation_functions/mish-cuda || exit
 python collect_env.py
-python setup.py build install
+python setup.py build install)
 
 
-
-cd models/scaled_yolo_v4 || exit
-python train.py --img 2048 1536  --batch 64 --epochs 500 --data './data/data.yaml' --cfg ./models/yolov4-csp.yaml --weights '' --name yolov4-csp-results  --notest
+(cd models/scaled_yolo_v4 || exit
+python train.py --img 2048 1536  --batch 64 --epochs 500 --data './data/data.yaml' --cfg ./models/yolov4-csp.yaml --weights '' --name yolov4-csp-results  --notest)
 
 
 # python bio-multi-sum/main.py --embedding=biosentvec --total_documents=6 --docs_in_document_cluster=2 --pre_trained_model=pegasus
