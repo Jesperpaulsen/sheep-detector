@@ -1,0 +1,138 @@
+We are running from this directory: /cluster/home/jespergp/sheep-detector
+The name of the job is: testing
+The job ID is 167472
+The job was run on these nodes: idun-06-03
+Number of nodes: 1
+We are using 1 cores
+We are using 1 cores per node
+Total of 1 cores
+Python 3.8.8
+pip 21.0.1 from /cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/pip (python 3.8)
+Collecting environment information...
+PyTorch version: 1.8.1
+Is debug build: False
+CUDA used to build PyTorch: 11.1
+ROCM used to build PyTorch: N/A
+
+OS: CentOS Linux release 8.2.2004 (Core)  (x86_64)
+GCC version: (GCC) 10.2.0
+Clang version: Could not collect
+CMake version: Could not collect
+
+Python version: 3.8 (64-bit runtime)
+Is CUDA available: True
+CUDA runtime version: 11.1.105
+GPU models and configuration: GPU 0: Tesla V100-PCIE-32GB
+Nvidia driver version: 460.27.04
+cuDNN version: Could not collect
+HIP runtime version: N/A
+MIOpen runtime version: N/A
+
+Versions of relevant libraries:
+[pip3] numpy==1.19.2
+[pip3] torch==1.8.1
+[pip3] torchaudio==0.8.0a0+e4e171a
+[pip3] torchvision==0.2.2
+[conda] blas                      1.0                         mkl  
+[conda] cudatoolkit               11.1.1               h6406543_8    conda-forge
+[conda] libblas                   3.9.0                     8_mkl    conda-forge
+[conda] libcblas                  3.9.0                     8_mkl    conda-forge
+[conda] liblapack                 3.9.0                     8_mkl    conda-forge
+[conda] liblapacke                3.9.0                     8_mkl    conda-forge
+[conda] mkl                       2020.4             h726a3e6_304    conda-forge
+[conda] mkl-service               2.3.0            py38he904b0f_0  
+[conda] mkl_fft                   1.3.0            py38h54f3939_0  
+[conda] mkl_random                1.1.1            py38h0573a6f_0  
+[conda] numpy                     1.19.2           py38h54aff64_0  
+[conda] numpy-base                1.19.2           py38hfa32c7d_0  
+[conda] pytorch                   1.8.1           py3.8_cuda11.1_cudnn8.0.5_0    pytorch
+[conda] torchaudio                0.8.1                      py38    pytorch
+[conda] torchvision               0.2.2                      py_3    pytorch
+running build
+running build_py
+running egg_info
+writing src/mish_cuda.egg-info/PKG-INFO
+writing dependency_links to src/mish_cuda.egg-info/dependency_links.txt
+writing requirements to src/mish_cuda.egg-info/requires.txt
+writing top-level names to src/mish_cuda.egg-info/top_level.txt
+reading manifest file 'src/mish_cuda.egg-info/SOURCES.txt'
+writing manifest file 'src/mish_cuda.egg-info/SOURCES.txt'
+running build_ext
+building 'mish_cuda._C' extension
+Emitting ninja build file /cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/build/temp.linux-x86_64-3.8/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/utils/cpp_extension.py:283: UserWarning: 
+
+                               !! WARNING !!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Your compiler (c++) is not compatible with the compiler Pytorch was
+built with for this platform, which is g++ on linux. Please
+use g++ to to compile your extension. Alternatively, you may
+compile PyTorch from source using c++, and then you can also use
+c++ to compile your extension.
+
+See https://github.com/pytorch/pytorch/blob/master/CONTRIBUTING.md for help
+with compiling PyTorch from source.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                              !! WARNING !!
+
+  warnings.warn(WRONG_COMPILER_WARNING.format(
+[1/1] /cluster/apps/eb/software/CUDAcore/11.1.1/bin/nvcc --generate-dependencies-with-compile --dependency-output /cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/build/temp.linux-x86_64-3.8/csrc/mish_kernel.o.d -Iexternal -I/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/include -I/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/include/TH -I/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/include/THC -I/cluster/apps/eb/software/CUDAcore/11.1.1/include -I/cluster/home/jespergp/miniconda/envs/sheep/include/python3.8 -c -c /cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/csrc/mish_kernel.cu -o /cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/build/temp.linux-x86_64-3.8/csrc/mish_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' --expt-extended-lambda -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_70,code=compute_70 -gencode=arch=compute_70,code=sm_70 -std=c++14
+FAILED: /cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/build/temp.linux-x86_64-3.8/csrc/mish_kernel.o 
+/cluster/apps/eb/software/CUDAcore/11.1.1/bin/nvcc --generate-dependencies-with-compile --dependency-output /cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/build/temp.linux-x86_64-3.8/csrc/mish_kernel.o.d -Iexternal -I/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/include -I/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/include/TH -I/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/include/THC -I/cluster/apps/eb/software/CUDAcore/11.1.1/include -I/cluster/home/jespergp/miniconda/envs/sheep/include/python3.8 -c -c /cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/csrc/mish_kernel.cu -o /cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/build/temp.linux-x86_64-3.8/csrc/mish_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' --expt-extended-lambda -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_70,code=compute_70 -gencode=arch=compute_70,code=sm_70 -std=c++14
+/cluster/home/jespergp/sheep-detector/activation_functions/mish-cuda/csrc/mish_kernel.cu:3:10: fatal error: CUDAApplyUtils.cuh: No such file or directory
+    3 | #include "CUDAApplyUtils.cuh"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+Traceback (most recent call last):
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1667, in _run_ninja_build
+    subprocess.run(
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "setup.py", line 10, in <module>
+    setup(
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/setuptools/__init__.py", line 153, in setup
+    return distutils.core.setup(**attrs)
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/command/build.py", line 135, in run
+    self.run_command(cmd_name)
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/cmd.py", line 313, in run_command
+    self.distribution.run_command(command)
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/setuptools/command/build_ext.py", line 79, in run
+    _build_ext.run(self)
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/command/build_ext.py", line 340, in run
+    self.build_extensions()
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 708, in build_extensions
+    build_ext.build_extensions(self)
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/command/build_ext.py", line 449, in build_extensions
+    self._build_extensions_serial()
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/command/build_ext.py", line 474, in _build_extensions_serial
+    self.build_extension(ext)
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/setuptools/command/build_ext.py", line 196, in build_extension
+    _build_ext.build_extension(self, ext)
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/distutils/command/build_ext.py", line 528, in build_extension
+    objects = self.compiler.compile(sources,
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 529, in unix_wrap_ninja_compile
+    _write_ninja_file_and_compile_objects(
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1354, in _write_ninja_file_and_compile_objects
+    _run_ninja_build(
+  File "/cluster/home/jespergp/miniconda/envs/sheep/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1683, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error compiling objects for extension
+/var/slurm_spool/job167472/slurm_script: line 46: cd: models/scaled_yolo_v4: No such file or directory
